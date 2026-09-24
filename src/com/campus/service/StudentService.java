@@ -9,22 +9,24 @@ public class StudentService {
             return 0;
         }
         int total = 0;
-        int[] marks = student.getmarks();
+        int[] marks = student.getMarks();
         for (int mark : marks) {
             total += mark;
         }
         return total;
     }
     //calculate average marks
-    public double calculateAverage(int[] marks){
+    public double calculateAverage(Student student) {
+        int[] marks = student.getMarks();
         if (marks == null )
             return 0.0;
         
-        int total = calculateTotalMarks(marks);
+        int total = calculateTotalMarks(student);
         return (double) total / marks.length;
     }
     //find maximum marks
-    public int findMaximum(int[] marks){
+    public int findMaximum(Student student){
+        int[] marks = student.getMarks();
         if (marks == null || marks.length ==0){
             return 0;
 
@@ -72,7 +74,7 @@ public class StudentService {
     }
 //pass or fail
 public String passorFail(Student student){
-    int[] marks = student.getmarks();
+    int[] marks = student.getMarks();
     if (marks == null || marks.length ==0){
         return "Fail";
     }
@@ -91,8 +93,8 @@ public void displayReportCard(Student student){
     System.out.println("Student Name: " + student.getStudentname());
     System.out.println("Department: " + student.getDepartment());
     System.out.println("Total Marks: " + calculateTotalMarks(student));
-    System.out.println("Average Marks: " + calculateAverage(student.getMarks()));
-    System.out.println("Maximum Marks: " + findMaximum(student.getMarks()));
+    System.out.println("Average Marks: " + calculateAverage(student));
+    System.out.println("Maximum Marks: " + findMaximum(student));
     System.out.println("Minimum Marks: " + findMinimum(student));
     System.out.println("Grade: " + grade(student));
     System.out.println("Result: " + passorFail(student));

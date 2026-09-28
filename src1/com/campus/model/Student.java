@@ -76,7 +76,6 @@ public abstract class Student implements StudentOperation{
         System.out.println("Student Name: " + studentname);
         System.out.println("Student Age: " + studentage);
         System.out.println("Department: " + department);
-        System.out.print("Marks: ");
     }
 
     public void displaystudentInfo(boolean showMarks) {
@@ -86,6 +85,7 @@ public abstract class Student implements StudentOperation{
             System.out.println("Marks: " + java.util.Arrays.toString(marks));
         }
     }
+    public abstract void studentType(); // abstract method - must be implemented by subclass
 
 // static method - belong to class not object
     public static void displayStudentCount() {

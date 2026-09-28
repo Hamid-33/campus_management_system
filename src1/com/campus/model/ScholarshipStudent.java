@@ -25,8 +25,17 @@ public class ScholarshipStudent extends Student {
         super.displayStudentInfo();
         System.out.println("Scholarship Percentage: " + scholarshipPercentage);
     } 
+    @Override 
+    public void displaystudentInfo(boolean showMarks) {
+        super.displaystudentInfo(showMarks);
+        
+    }
+    @Override 
+    public void generatereport() {
+        System.out.println("Generating report for Scholarship Student: " + getStudentname());
+    }
     @Override
-    public void displayStudentInfo(boolean showMarks) {
-        super.displayStudentInfo(showMarks);
+    public void eligbleForScholarship() {
+        System.out.println(getStudentname() + " is eligible for scholarship of " + scholarshipPercentage + "%");
     }
 }

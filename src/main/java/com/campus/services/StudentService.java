@@ -1,4 +1,4 @@
-package main.java.com.campus.services;
+package com.campus.services;
 import java.util.ArrayList;
 import java.util.List;
 public class StudentService {
